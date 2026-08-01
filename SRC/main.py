@@ -1,5 +1,6 @@
 
 import menu
+import veiculos
 from utilidades import *
 
 seguir_mprincipal = True
@@ -14,13 +15,15 @@ while seguir_mprincipal:
         while seguir_mveiculos:
             smenu_veiculos = menu.menu_veiculos()
             if smenu_veiculos == "1":
-                
 
             elif smenu_veiculos == "2":
                 
 
             elif smenu_veiculos == "0":
                 seguir_mveiculos = False
+
+            else:
+
 
 
 
