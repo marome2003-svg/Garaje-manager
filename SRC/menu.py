@@ -2,42 +2,95 @@ from utilidades import *
 import veiculos
 
 def menu_principal():
-    limpiar()
-    print()
-    print("=========================================================")
-    print("                     Garage Manager                      ")
-    print("=========================================================")
-    print()
-    print("1 - Gestión de veículos")
-    print("2 - Gestión de mantenimientos")
-    print("3 - Estadísticas")
-    print("4 - Configuración")
-    print()
-    print("0 - Salir")
-    print()
-    smenu_principal = input("seleccione una opccion (1, 2, 3, 4, 0): ")
-    return smenu_principal
+
+    while True:
+        limpiar()
+        print()
+        print("=========================================================")
+        print("                     Garage Manager                      ")
+        print("=========================================================")
+        print()
+        print("1 - Gestión de veículos")
+        print("2 - Gestión de mantenimientos")
+        print("3 - Estadísticas")
+        print("4 - Configuración")
+        print()
+        print("0 - Salir")
+        print()
+        opcion = input("seleccione una opccion (1, 2, 3, 4, 0): ")
+
+        if opcion == "1":
+            menu_veiculos()                     
+
+        
+        elif opcion == "2":
+            funcion_nodisponible()
+            #menu_mantenimientos()
+
+        elif opcion == "3":
+            funcion_nodisponible()
+            #menu_estadisticas()
+
+        elif opcion == "4":
+            funcion_nodisponible()
+            #menu_config()
+
+        elif opcion == "0":
+            print()
+            print("Hasta luego!")
+            pause()
+            limpiar()
+            break
+
+        else:
+            print()
+            print("Selecciona una opcion valida")
+            pause()
 
 
 def menu_veiculos():
-    limpiar()
-    print()
-    print("=========================================================")
-    print("                   Gestión de veículos                   ")
-    print("=========================================================")
-    print()
-    print("1 - Añadir veículo")
-    print("2 - Ver veículos")
-    print("3 - Buscar veículo")
-    print("4 - Eliminar veículo")
-    print()
-    print("0 - volver")
-    print()
-    smenu_veiculos = input("seleccione una opccion (1, 2, 3, 4, 0): ")
-    return smenu_veiculos
+    while True:
+        limpiar()
+        print()
+        print("=========================================================")
+        print("                   Gestión de veículos                   ")
+        print("=========================================================")
+        print()
+        print("1 - Añadir veículo")
+        print("2 - Ver veículos")
+        print("3 - Buscar veículo")
+        print("4 - Eliminar veículo")
+        print()
+        print("0 - volver")
+        print()
+        opcion = input("seleccione una opccion (1, 2, 3, 4, 0): ")
 
-contador_veiculos = 1
+        if opcion == "1":
+            veiculos.añadir_veiculo()
+
+        elif opcion == "2":
+            menu_mostrar_veiculos()
+                
+
+        elif opcion == "3":
+            funcion_nodisponible()
+
+        elif opcion == "4":
+            funcion_nodisponible()
+
+        elif opcion == "0":
+            break
+
+        else:
+            print()
+            print("Selecciona una opcion valida")
+            pause()
+
+    
+
 def menu_mostrar_veiculos():
+
+    while True:
         contador_veiculos = 1
         limpiar()
         print()
@@ -48,6 +101,16 @@ def menu_mostrar_veiculos():
         print("1. eliminar veiculo")
         print("2. volver")
         print()
-        smenu_mostrarveiculos = input("seleccione una opcion (1, 2): ")
-        return smenu_mostrarveiculos
+        opcion = input("seleccione una opcion (1, 2): ")
+
+        if opcion == "1":
+            veiculos.borrar_veiculo()
+
+        elif opcion == "2":
+            break
+
+        else:
+            print()
+            print("seleccione una opcion correcta.")
+            pause()
     
