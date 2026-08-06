@@ -1,4 +1,5 @@
 from utilidades import *
+import veiculos
 
 def menu_principal():
     limpiar()
@@ -35,6 +36,18 @@ def menu_veiculos():
     smenu_veiculos = input("seleccione una opccion (1, 2, 3, 4, 0): ")
     return smenu_veiculos
 
+contador_veiculos = 1
 def menu_mostrar_veiculos():
-    print()
+        contador_veiculos = 1
+        limpiar()
+        print()
+        for imprimir_veiculo in veiculos.veiculos:
+            print(str(contador_veiculos) + "-" + imprimir_veiculo)
+            contador_veiculos = contador_veiculos + 1
+        print()
+        print("1. eliminar veiculo")
+        print("2. volver")
+        print()
+        smenu_mostrarveiculos = input("seleccione una opcion (1, 2): ")
+        return smenu_mostrarveiculos
     

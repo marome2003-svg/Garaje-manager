@@ -15,26 +15,52 @@ while seguir_mprincipal:
         while seguir_mveiculos:
             smenu_veiculos = menu.menu_veiculos()
             if smenu_veiculos == "1":
+                veiculos.añadir_veiculo()
 
             elif smenu_veiculos == "2":
+                seguir_mmostrar_veiculos = True
+                while seguir_mmostrar_veiculos:
+                    smenu_mostrarveiculos = menu.menu_mostrar_veiculos()
+                    if smenu_mostrarveiculos == "1":
+                        veiculos.borrar_veiculo()
+
+                    elif smenu_mostrarveiculos == "2":
+                        seguir_mmostrar_veiculos = False
+
+                    else:
+                        print()
+                        print("seleccione una opcion correcta.")
+                        pause()
                 
+
+            elif smenu_veiculos == "3":
+                funcion_nodisponible()
+
+            elif smenu_veiculos == "4":
+                funcion_nodisponible()
 
             elif smenu_veiculos == "0":
                 seguir_mveiculos = False
 
             else:
+                print()
+                print("seleccione una opcion correcta.")
+                pause()
 
 
 
 
     elif smenu_principal == "2":
-        menu_mantenimientos()
+        funcion_nodisponible()
+        #menu_mantenimientos()
 
     elif smenu_principal == "3":
-        menu_estadisticas()
+        funcion_nodisponible()
+        #menu_estadisticas()
 
     elif smenu_principal == "4":
-        menu_config()
+        funcion_nodisponible()
+        #menu_config()
 
     elif smenu_principal == "0":
         print()
