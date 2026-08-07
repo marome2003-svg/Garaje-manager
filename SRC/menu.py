@@ -1,5 +1,6 @@
 from utilidades import *
 import veiculos
+import os 
 
 def menu_principal():
 
@@ -32,8 +33,8 @@ def menu_principal():
             #menu_estadisticas()
 
         elif opcion == "4":
-            funcion_nodisponible()
-            #menu_config()
+            #funcion_nodisponible()
+            menu_config()
 
         elif opcion == "0":
             print()
@@ -99,18 +100,50 @@ def menu_mostrar_veiculos():
             contador_veiculos = contador_veiculos + 1
         print()
         print("1. eliminar veiculo")
-        print("2. volver")
+        print("0. volver")
         print()
         opcion = input("seleccione una opcion (1, 2): ")
 
         if opcion == "1":
             veiculos.borrar_veiculo()
 
-        elif opcion == "2":
+        elif opcion == "0":
             break
 
         else:
             print()
             print("seleccione una opcion correcta.")
             pause()
-    
+
+def menu_config():
+    while True:
+        limpiar()
+        print()
+        print("=========================================================")
+        print("                      Configuracion                      ")
+        print("=========================================================")
+        print()
+        print()
+        print("1 - Resetear memoria")
+        print("0 - volver")
+        print()
+        opcion = input("Seleccione una opcion (1, 0): ")
+
+        if opcion == "1":
+            try:
+                os.remove("/workspaces/Garaje-manager/data/veiculos.txt")
+
+            except FileNotFoundError:
+                pass
+
+            veiculos.veiculos.clear()
+            break
+
+        elif opcion == "0":
+            break
+
+        else:
+            print()
+            print("seleccione una opcion correcta.")
+            pause()
+            

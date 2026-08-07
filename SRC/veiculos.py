@@ -18,3 +18,21 @@ def borrar_veiculo():
         print()
         print("seleccione una opcion correcta (revisa las mayusculas). ")
         pause()
+
+def guardar_veiculos():
+    archivo = open("/workspaces/Garaje-manager/data/veiculos.txt", "w")
+    for veiculo in veiculos:
+        archivo.write(veiculo + "\n")
+
+    archivo.close
+
+def cargar_veiculos():
+    try:
+        archivo = open("/workspaces/Garaje-manager/data/veiculos.txt", "r")
+        for linea in archivo:
+            veiculos.append(linea.strip())
+
+        archivo.close
+
+    except FileNotFoundError:
+        pass

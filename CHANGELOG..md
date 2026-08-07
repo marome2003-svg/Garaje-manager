@@ -28,3 +28,19 @@
 
 - Evitado el cierre inesperado del programa al volver desde los submenús.
 - Añadida validación al eliminar vehículos para impedir errores cuando el vehículo indicado no existe.
+
+## [0.4.0] - 2026-08-07
+
+### Añadido
+
+- Persistencia de datos para los vehículos.
+- Carga automática de los vehículos al iniciar la aplicación.
+- Guardado automático de los vehículos al cerrar la aplicación.
+- Nuevo menú de configuración.
+- Opción para restablecer la memoria de vehículos.
+
+### Mejorado
+
+- Reorganizada la estructura del proyecto para separar la lógica de la interfaz y la gestión de datos.
+- Mejorada la organización del flujo principal de la aplicación.
+
