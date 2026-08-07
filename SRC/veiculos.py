@@ -1,5 +1,6 @@
 
 from utilidades import *
+from rutas import ruta_veiculos
 
 veiculos = []
 
@@ -20,7 +21,7 @@ def borrar_veiculo():
         pause()
 
 def guardar_veiculos():
-    archivo = open("/workspaces/Garaje-manager/data/veiculos.txt", "w")
+    archivo = open(ruta_veiculos, "w")
     for veiculo in veiculos:
         archivo.write(veiculo + "\n")
 
@@ -28,7 +29,7 @@ def guardar_veiculos():
 
 def cargar_veiculos():
     try:
-        archivo = open("/workspaces/Garaje-manager/data/veiculos.txt", "r")
+        archivo = open(ruta_veiculos, "r")
         for linea in archivo:
             veiculos.append(linea.strip())
 

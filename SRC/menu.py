@@ -130,8 +130,9 @@ def menu_config():
         opcion = input("Seleccione una opcion (1, 0): ")
 
         if opcion == "1":
+            from rutas import ruta_veiculos
             try:
-                os.remove("/workspaces/Garaje-manager/data/veiculos.txt")
+                os.remove(ruta_veiculos)
 
             except FileNotFoundError:
                 pass
