@@ -44,3 +44,26 @@
 - Reorganizada la estructura del proyecto para separar la lógica de la interfaz y la gestión de datos.
 - Mejorada la organización del flujo principal de la aplicación.
 
+## [0.5.0] - 2026-08-10
+
+### Añadido
+
+- Los vehículos pasan a almacenarse como diccionarios.
+- Añadidos los datos de marca, modelo y kilómetros para cada vehículo.
+- Añadida la visualización detallada de la información de cada vehículo.
+- Añadida la posibilidad de modificar los datos de un vehículo.
+- Actualizada la memoria para guardar y cargar los vehículos con sus nuevos datos.
+
+### Mejorado
+
+- Rediseñado el menú de gestión de vehículos.
+- Mejorada la selección de vehículos mediante índices.
+- Añadidas validaciones para evitar entradas incorrectas.
+- Los kilómetros se gestionan como valores numéricos.
+- Mejorada la gestión de errores al seleccionar, modificar y eliminar vehículos.
+
+### Corregido
+
+- Evitados errores al introducir índices de vehículos inexistentes.
+- Evitados índices negativos al seleccionar vehículos.
+- Corregida la conversión de kilómetros al guardar y cargar los datos.

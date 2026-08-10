@@ -57,8 +57,19 @@ def menu_veiculos():
         print("                   Gestión de veículos                   ")
         print("=========================================================")
         print()
+
+        if veiculos.veiculos:
+            print(" - VEHICULOS REGISTRADOS - ")
+            print("----------------------------")
+            print()
+            contador = 0
+            for items in veiculos.veiculos:
+                print(str(contador) + ". " + items["marca"] + " " + items["modelo"])
+                contador = contador + 1
+            print()
+
         print("1 - Añadir veículo")
-        print("2 - Ver veículos")
+        print("2 - Ver informacion de vehículos")
         print("3 - Buscar veículo")
         print("4 - Eliminar veículo")
         print()
@@ -77,7 +88,7 @@ def menu_veiculos():
             funcion_nodisponible()
 
         elif opcion == "4":
-            funcion_nodisponible()
+            veiculos.borrar_veiculo()
 
         elif opcion == "0":
             break
@@ -90,30 +101,69 @@ def menu_veiculos():
     
 
 def menu_mostrar_veiculos():
+    print()
+    while True:
+        try:
+            opcion = int(input("Elige un veiculo (0, 1, 2...) "))
+            if opcion < len(veiculos.veiculos) and opcion >= 0:
+                break
+
+            else:
+                print()
+                print("No exixte ningun vehiculo con esa numeracion")
+
+        except:
+            print()
+            print("Introduce una opccion correcta: ")
+        
 
     while True:
-        contador_veiculos = 1
         limpiar()
         print()
-        for imprimir_veiculo in veiculos.veiculos:
-            print(str(contador_veiculos) + "-" + imprimir_veiculo)
-            contador_veiculos = contador_veiculos + 1
+        print("=========================================================")
+        print("             " + veiculos.veiculos[opcion]["marca"] + " " + veiculos.veiculos[opcion]["modelo"])
+        print("=========================================================")
         print()
-        print("1. eliminar veiculo")
-        print("0. volver")
+        for clave, valor in veiculos.veiculos[opcion].items():
+            print(clave + ": ", valor)
+
         print()
-        opcion = input("seleccione una opcion (1, 2): ")
+        print("1 - Modificar datos")
+        print("0 - volver")
+        print()
+        try:
+            opcion2 = input("selecciona un opccion (1, 0): ")
 
-        if opcion == "1":
-            veiculos.borrar_veiculo()
+            if opcion2 == "1":
+                print()
+                while True:
+                    opcion3 = input("introduce el dato que deseas modificar (marcar, modelo...): ")
+                    if opcion3 != "marca" and opcion3 != "modelo" and opcion3 != "km":
+                        print()
+                        print("Introduce un tipo de dato valido")
 
-        elif opcion == "0":
-            break
+                    else:
+                        break
 
-        else:
+                print()
+                modificar = input("Introduce el nuevo valor: ")
+                if opcion3 == "km":
+                    modificar = int(modificar)
+
+                veiculos.veiculos[opcion][opcion3] = modificar
+
+            elif opcion2 == "0":
+                break
+
+            else:
+                print()
+                print("selecciona una opcion valida")
+                pause()
+
+        except:
             print()
-            print("seleccione una opcion correcta.")
-            pause()
+            print("Introduce una opccion valida")
+
 
 def menu_config():
     while True:
